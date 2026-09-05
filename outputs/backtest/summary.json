@@ -1,0 +1,13 @@
+{
+    "configuration": {
+        "input_size": 250,
+        "prediction_size": 5,
+        "windows": 100,
+        "step": 500
+    },
+    "Number_of_windows": 100,
+    "Average_MAE": 8.544229355468739,
+    "Average_RMSE": 9.386394707287478,
+    "Average_MAPE": 0.18695730959268064,
+    "Average_Directional_Accuracy": 49.25
+}

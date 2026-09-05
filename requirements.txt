@@ -1,0 +1,9 @@
+# requirements
+pandas
+numpy
+torch
+transformers
+matplotlib
+scikit-learn
+tqdm
+pyyaml

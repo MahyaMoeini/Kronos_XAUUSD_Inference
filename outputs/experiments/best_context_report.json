@@ -1,0 +1,146 @@
+{
+    "experiment": "context_horizon_grid",
+    "ranking_method": {
+        "RMSE_weight": 0.4,
+        "Directional_Accuracy_weight": 0.4,
+        "MAE_weight": 0.2,
+        "time_sec_weight": 0
+    },
+    "total_tests": 342,
+    "best_configuration": {
+        "input_size": 250,
+        "prediction_size": 5,
+        "step": 500,
+        "windows": 100,
+        "metrics": {
+            "MAE": 8.240183671874984,
+            "RMSE": 9.15800252889457,
+            "MAPE": 0.1812194282388125,
+            "Directional_Accuracy": 54.5,
+            "time_sec": 4.054113864898682
+        },
+        "final_score": 0.995235905712116
+    },
+    "top_10_configurations": [
+        {
+            "input_size": 250,
+            "pred_size": 5,
+            "step": 500,
+            "windows": 100,
+            "MAE": 8.240184,
+            "RMSE": 9.158003,
+            "MAPE": 0.181219,
+            "Directional_Accuracy": 54.5,
+            "time_sec": 4.054114,
+            "score": 0.995236
+        },
+        {
+            "input_size": 100,
+            "pred_size": 10,
+            "step": 500,
+            "windows": 100,
+            "MAE": 8.829698,
+            "RMSE": 10.158924,
+            "MAPE": 0.195834,
+            "Directional_Accuracy": 53.0,
+            "time_sec": 7.348195,
+            "score": 0.925761
+        },
+        {
+            "input_size": 700,
+            "pred_size": 5,
+            "step": 500,
+            "windows": 100,
+            "MAE": 11.699257,
+            "RMSE": 12.886201,
+            "MAPE": 0.254781,
+            "Directional_Accuracy": 53.25,
+            "time_sec": 5.392977,
+            "score": 0.921608
+        },
+        {
+            "input_size": 300,
+            "pred_size": 10,
+            "step": 500,
+            "windows": 100,
+            "MAE": 10.666895,
+            "RMSE": 12.506877,
+            "MAPE": 0.233456,
+            "Directional_Accuracy": 53.111111,
+            "time_sec": 7.151434,
+            "score": 0.918888
+        },
+        {
+            "input_size": 350,
+            "pred_size": 5,
+            "step": 500,
+            "windows": 100,
+            "MAE": 8.680957,
+            "RMSE": 9.627846,
+            "MAPE": 0.189579,
+            "Directional_Accuracy": 52.25,
+            "time_sec": 4.056217,
+            "score": 0.895463
+        },
+        {
+            "input_size": 500,
+            "pred_size": 5,
+            "step": 500,
+            "windows": 100,
+            "MAE": 9.54788,
+            "RMSE": 10.698705,
+            "MAPE": 0.209067,
+            "Directional_Accuracy": 52.25,
+            "time_sec": 4.498877,
+            "score": 0.890081
+        },
+        {
+            "input_size": 300,
+            "pred_size": 5,
+            "step": 500,
+            "windows": 100,
+            "MAE": 8.180228,
+            "RMSE": 9.186698,
+            "MAPE": 0.179766,
+            "Directional_Accuracy": 51.5,
+            "time_sec": 4.116202,
+            "score": 0.86552
+        },
+        {
+            "input_size": 600,
+            "pred_size": 5,
+            "step": 500,
+            "windows": 100,
+            "MAE": 8.425067,
+            "RMSE": 9.297543,
+            "MAPE": 0.185186,
+            "Directional_Accuracy": 51.5,
+            "time_sec": 4.741768,
+            "score": 0.864668
+        },
+        {
+            "input_size": 150,
+            "pred_size": 10,
+            "step": 500,
+            "windows": 100,
+            "MAE": 9.464894,
+            "RMSE": 10.968376,
+            "MAPE": 0.208054,
+            "Directional_Accuracy": 51.555556,
+            "time_sec": 7.116955,
+            "score": 0.859269
+        },
+        {
+            "input_size": 100,
+            "pred_size": 5,
+            "step": 500,
+            "windows": 100,
+            "MAE": 7.581786,
+            "RMSE": 8.430717,
+            "MAPE": 0.165931,
+            "Directional_Accuracy": 51.0,
+            "time_sec": 4.24454,
+            "score": 0.847672
+        }
+    ]
+}
