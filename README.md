@@ -106,15 +106,28 @@ Execution time is not considered in model selection.
 
 # Best Configuration
 
-The selected configuration is obtained from:
+The selected configuration is recorded in
+[outputs/experiments/best_context_report.json](outputs/experiments/best_context_report.json)
+for the `context_horizon_grid` experiment (342 tests).
 
-    outputs/experiments/best_context_report.json
+| Parameter | Recorded value |
+| --- | --- |
+| `input_size` | 250 |
+| `prediction_size` | 5 |
+| `step` | 500 |
+| `windows` | 100 |
 
-Parameters:
+The ranking weights recorded in the report are `RMSE=0.4`,
+`Directional Accuracy=0.4`, and `MAE=0.2`; execution time has
+weight `0`. “Best” refers to this experiment's weighted ranking,
+not to the lowest value of every error metric individually.
 
--   Input context: optimized by grid search
--   Prediction horizon: optimized by grid search
--   Timeframe: M5
+Recorded metrics for this configuration:
+
+- MAE: `8.240183671874984`
+- RMSE: `9.15800252889457`
+- MAPE: `0.1812194282388125`
+- Directional Accuracy: `54.5`
 
 ------------------------------------------------------------------------
 
@@ -169,16 +182,43 @@ Measures whether the model correctly predicts market movement direction.
 
 # Final Results
 
-The final numerical results are generated from:
+[outputs/final/metrics.json](outputs/final/metrics.json) records the
+following results for `window=15`:
 
-    outputs/final/metrics.json
+- MAE: `3.4538399999999454`
+- RMSE: `4.588045236045331`
+- MAPE: `0.08209525750483329`
+- Directional Accuracy: `25.0`
 
-The report contains:
+In [evaluation/final_evaluation.py](evaluation/final_evaluation.py),
+`WINDOW = 15` selects `window_15_actual.csv` and
+`window_15_prediction.csv` from `outputs/backtest/windows/`.
+It is a backtest window identifier, not a prediction horizon or a count
+of evaluated windows. These final metrics describe that selected window,
+not an average across all backtest windows.
 
--   MAE
--   RMSE
--   MAPE
--   Directional Accuracy
+## Report Comparison
+
+Values below retain the precision recorded in the JSON reports.
+
+| Report / evaluation scope | MAE | RMSE | MAPE | Directional Accuracy |
+| --- | --- | --- | --- | --- |
+| Context–horizon experiment: selected configuration (`input_size=250`, `prediction_size=5`, `step=500`, `windows=100`) | 8.240183671874984 | 9.15800252889457 | 0.1812194282388125 | 54.5 |
+| Final evaluation: selected backtest `window=15` | 3.4538399999999454 | 4.588045236045331 | 0.08209525750483329 | 25.0 |
+
+**Comparison limitation:** These are outputs of different evaluation
+procedures with different recorded settings and scopes. The first report
+records the winning configuration of the context–horizon experiment;
+the second evaluates one selected backtest window. The final metrics
+JSON records only the window identifier and metrics, and does not
+independently record input size, prediction size, step, or total window
+count. Consequently, this table is a side-by-side record, not a
+controlled comparison: the lower final MAE/RMSE/MAPE does not establish
+an improvement over the experiment, and the directional accuracy
+difference does not establish a general performance change. Such a
+claim would require evaluation on the same samples with the same
+configuration and aggregation procedure; these two reports alone do
+not establish those conditions.
 
 ------------------------------------------------------------------------
 
